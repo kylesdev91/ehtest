@@ -5,6 +5,7 @@
         v-for="product in items"
         :key="product.id"
         :product="product"
+        v-on:view-product="viewProduct($event)"
       />
     </div>
   </div>
@@ -23,7 +24,14 @@ export default {
   data() {
     return {
       items: items,
+      product: null,
     };
+  },
+  methods: {
+    viewProduct(product) {
+      this.product = product;
+      console.log(this.product);
+    },
   },
 };
 </script>
