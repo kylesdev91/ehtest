@@ -29,7 +29,7 @@ export default {
   props: ['product', 'active'],
   computed: {
     product_total() {
-      return 56.0;
+      return 5;
     },
   },
 };
