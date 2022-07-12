@@ -4,7 +4,7 @@
       >Home</router-link
     >
     <router-link :class="{ active: $route.name === 'Cart' }" to="/cart"
-      >About</router-link
+      >Cart</router-link
     >
   </div>
   <router-view />
