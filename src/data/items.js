@@ -3,19 +3,19 @@ const items = [
     id: 1,
     name: 'Gorila Glue 4',
     price: 1000.5,
-    image: 'gg4.png',
+    image: 'gg4.jpg',
   },
   {
     id: 2,
     name: 'Wedding Cake',
     price: 1000.5,
-    image: 'wedding-cake.jpeg',
+    image: 'wedding-cake.jpg',
   },
   {
     id: 3,
     name: 'Galato 33',
     price: 1000.5,
-    image: 'gelato-33.jpeg',
+    image: 'gelato-33.jpg',
   },
   {
     id: 4,
