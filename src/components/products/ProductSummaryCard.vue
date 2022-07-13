@@ -2,7 +2,6 @@
   <div class="card">
     <h3>{{ product.name }}</h3>
     <h5 class="price">Price: ${{ product.price.toFixed(2) }}</h5>
-    <p class="text-muted">{{ product.category }}</p>
     <button class="view-product-button" @click="$emit('view-product', product)">
       View Product
     </button>
