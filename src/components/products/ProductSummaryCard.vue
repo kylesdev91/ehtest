@@ -13,7 +13,7 @@ export default {
   props: ['product'],
   computed: {
     description() {
-      return this.product.description.substring(0, 150);
+      return this.product.substring(0, 150);
     },
   },
 };

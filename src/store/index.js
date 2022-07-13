@@ -15,6 +15,9 @@ export default createStore({
       if (item) return item.quantity;
       else return null;
     },
+    cartItems: (state) => {
+      return state.cart;
+    },
   },
   mutations: {
     addToCart(state, product) {
