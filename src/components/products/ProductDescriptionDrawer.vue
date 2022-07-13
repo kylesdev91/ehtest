@@ -12,13 +12,15 @@
       <h3 class="text-center">${{ product.price.toFixed(2) }}</h3>
 
       <div class="cart-total" v-if="product_total">
-        <h3>In Cart</h3>
+        <h3>Quantity:</h3>
         <h4>{{ product_total }}</h4>
       </div>
 
       <div class="button-container">
-        <button class="remove" @click="removeFromCart()">Remove</button>
-        <button class="add" @click="addToCart()">Add</button>
+        <button class="remove" @click="removeFromCart()">
+          Remove Quantity
+        </button>
+        <button class="add" @click="addToCart()">Add Quantity</button>
       </div>
     </div>
   </div>

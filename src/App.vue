@@ -1,4 +1,5 @@
 <template>
+  <h1>Kai Family Farm</h1>
   <div id="nav">
     <router-link :class="{ active: $route.name === 'Home' }" to="/"
       >Home</router-link
