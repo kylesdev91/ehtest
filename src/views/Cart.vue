@@ -7,14 +7,18 @@
       :key="product.id"
       :product="product"
     />
+
+    <CartSummaryPaymentCard />
   </div>
 </template>
 
 <script>
 import CartItemCard from '../components/cart/CartItemCard.vue';
+import CartSummaryPaymentCard from '../components/cart/CartSummaryPaymentCard.vue';
 export default {
   components: {
     CartItemCard,
+    CartSummaryPaymentCard,
   },
   computed: {
     products() {
