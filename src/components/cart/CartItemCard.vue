@@ -2,8 +2,8 @@
   <div class="cart-item-card">
     <div class="header">
       <h3>{{ product.name }}</h3>
-      <h4>Quantity: {{ product.quantity }}</h4>
-      <h4>Total Cost: {{ item_cost.toFixed(2) }}</h4>
+      <h4>Qty: {{ product.quantity }}</h4>
+      <h4>Total: ${{ item_cost.toFixed(2) }}</h4>
     </div>
   </div>
 </template>

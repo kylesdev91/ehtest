@@ -12,7 +12,7 @@
       <h3 class="text-center">${{ product.price.toFixed(0) }} / lb</h3>
 
       <div class="cart-total" v-if="product_total">
-        <h3>Quantity: {{ product_total }}</h3>
+        <h3>Quantity (lb): {{ product_total }}</h3>
       </div>
 
       <div class="button-container">
@@ -80,11 +80,10 @@ export default {
   font-size: 1.5rem;
   padding: 5px;
   border-radius: 5px;
-  right: 10px;
+
   border: 2px solid gray;
   color: gray;
-  width: 15px;
-  float: right;
+  width: 20px;
   cursor: pointer;
 
   &:hover {

@@ -1,11 +1,10 @@
 <template>
   <div class="card">
-    <h3>{{ product.name }}</h3>
-    <h5 class="price">Price: ${{ product.price.toFixed(0) }} / lb</h5>
+    <h2>{{ product.name }}</h2>
+    <h3 class="price">Price: ${{ product.price.toFixed(0) }} / lb</h3>
     <button class="view-product-button" @click="$emit('view-product', product)">
-      View Product
+      Buy
     </button>
-    <button v-on:click="addItemToCart(product)">Add to cart</button>
     <img :src="product.image" />
   </div>
 </template>
@@ -54,7 +53,6 @@ export default {
     cursor: pointer;
     font-weight: bold;
     background-color: teal;
-    margin-right: 30px;
     color: white;
     font-size: 20px;
   }

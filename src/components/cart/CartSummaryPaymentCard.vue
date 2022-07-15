@@ -13,3 +13,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.cart-item-card {
+  height: 60px;
+  font-size: 20px;
+  text-align: inherit;
+}
+</style>
