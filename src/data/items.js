@@ -3,7 +3,7 @@ const items = [
     id: 1,
     name: 'Gorila Glue 4',
     price: 1050,
-    image: 'gg4.jpg',
+    image: 'gg4.png',
   },
   {
     id: 2,

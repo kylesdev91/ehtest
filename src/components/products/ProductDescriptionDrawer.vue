@@ -9,18 +9,15 @@
     <div v-if="product" class="product details">
       <h3 class="text-center">{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
-      <h3 class="text-center">${{ product.price.toFixed(2) }}</h3>
+      <h3 class="text-center">${{ product.price.toFixed(0) }} / lb</h3>
 
       <div class="cart-total" v-if="product_total">
-        <h3>Quantity:</h3>
-        <h4>{{ product_total }}</h4>
+        <h3>Quantity: {{ product_total }}</h3>
       </div>
 
       <div class="button-container">
-        <button class="remove" @click="removeFromCart()">
-          Remove Quantity
-        </button>
-        <button class="add" @click="addToCart()">Add Quantity</button>
+        <button class="remove" @click="removeFromCart()">Remove</button>
+        <button class="add" @click="addToCart()">Add</button>
       </div>
     </div>
   </div>
@@ -95,28 +92,20 @@ export default {
   }
 }
 
-.product-details {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  p.description {
-    padding: 20px;
-    line-height: 1.5rem;
-  }
-
-  .button-container {
-    button {
-      width: 150px;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      margin: 0 5px 50px 5px;
-      color: pointer;
-    }
+.button-container {
+  button {
+    width: 150px;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 5px 50px 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
   }
 }
-
 @media (min-width: 500px) {
   .drawer {
     width: 450px;
