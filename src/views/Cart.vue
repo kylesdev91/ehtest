@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>Your Cart</h1>
-
     <CartItemCard
       v-for="product in products"
       :key="product.id"

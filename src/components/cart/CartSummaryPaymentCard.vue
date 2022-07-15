@@ -1,6 +1,7 @@
 <template>
   <div class="cart-item-card">
-    <h3>Cart Total: ${{ cart_total.toFixed(2) }}</h3>
+    <h5>Cart Total: ${{ cart_total.toFixed(2) }}</h5>
+    <button class="submit">Submit</button>
   </div>
 </template>
 
@@ -17,7 +18,20 @@ export default {
 <style lang="scss">
 .cart-item-card {
   height: 60px;
-  font-size: 20px;
-  text-align: inherit;
+  font-size: 25px;
+  text-align: left;
+
+  .submit {
+    background-color: green;
+    font-weight: bold;
+    padding: 20px;
+    width: 15%;
+    color: white;
+    font-size: 25px;
+    width: 200px;
+    margin-left: 10px;
+    height: 100%;
+    text-align: center;
+  }
 }
 </style>
