@@ -1,7 +1,10 @@
 <template>
   <div id="nav">
-    <h2 style="margin-left: 5px">Kai Family Farm</h2>
-    <img src="leaf.jpg" />
+    <div style="display: flex; margin-left: 5px; margin-top: 5px">
+      <img src="leaf.jpg" style="height: 40px; width: 40px" />
+      <h2>Kai Family Farm</h2>
+    </div>
+
     <!-- <router-link :class="{ active: $route.name === 'Home' }" to="/"
       >Home</router-link
     > -->
@@ -10,9 +13,11 @@
       >Cart</router-link
     > -->
     <!-- <router-link to="/cart">Cart</router-link> -->
-    <img src="shoppingcart.jpeg" />
+    <div>
+      <img src="shoppingcart.jpeg" />
+    </div>
   </div>
-  <router-view />
+  <router-view style="margin-top: 50px" />
 </template>
 
 <script>

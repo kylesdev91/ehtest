@@ -3,7 +3,7 @@
     <div class="header">
       <h6>{{ product.name }}</h6>
       <h6>Qty: {{ product.quantity }}</h6>
-      <h6>Total: ${{ item_cost.toFixed(2) }}</h6>
+      <h6>Total: ${{ item_cost.toFixed(0) }}</h6>
     </div>
   </div>
 </template>
@@ -26,12 +26,12 @@ export default {
 .cart-item-card {
   /* width: 90%; */
   /* height: 100%; */
-  /* margin: 5%; */
+  margin: 5%;
   /* margin-top: 160px; */
   background-color: white;
   box-shadow: 0 0 5px gray;
-  border-radius: 10px;
-  padding: 45px;
+  border-radius: 20px;
+  /* padding: 45px; */
   /* position: relative; */
   /* text-align: right; */
 }

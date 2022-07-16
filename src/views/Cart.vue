@@ -1,11 +1,10 @@
 <template>
-  <div>
+  <div style="margin-top: 35px; height: 2000px">
     <CartItemCard
       v-for="product in products"
       :key="product.id"
       :product="product"
     />
-
     <CartSummaryPaymentCard />
   </div>
 </template>

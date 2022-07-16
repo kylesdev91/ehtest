@@ -22,8 +22,10 @@ export default {
 
 <style lang="scss">
 .card {
+  /* margin-top: 50px; */
+  /* height: 300px; */
   width: 80%;
-  margin: 10%;
+  margin: 3%;
   padding: 10px;
   border-radius: 5px;
   background-color: white;

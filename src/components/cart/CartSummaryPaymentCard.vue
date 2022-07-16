@@ -1,7 +1,9 @@
 <template>
   <div class="cart-item-card">
-    <h5>Cart Total: ${{ cart_total.toFixed(2) }}</h5>
-    <button class="submit">Submit</button>
+    <div style="text-align: center">
+      <h5>Cart Total: ${{ cart_total.toFixed(0) }}</h5>
+      <button class="submit">Submit</button>
+    </div>
   </div>
 </template>
 
@@ -19,6 +21,8 @@ export default {
 .cart-item-card {
   /* height: 60px; */
   font-size: 25px;
+  margin-bottom: 40px;
+  /* margin-top: 40px; */
   /* position: relative; */
   /* text-align: left; */
 
@@ -32,8 +36,8 @@ export default {
     /* width: 200px; */
     /* margin-left: 10px; */
     /* height: 100%; */
-    /* justify-content: center; */
-    position: relative;
+
+    /* position: relative; */
     /* margin: auto; */
   }
 }
