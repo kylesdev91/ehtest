@@ -17,21 +17,24 @@ export default {
 
 <style lang="scss">
 .cart-item-card {
-  height: 60px;
+  /* height: 60px; */
   font-size: 25px;
-  text-align: left;
+  /* position: relative; */
+  /* text-align: left; */
 
   .submit {
     background-color: green;
-    font-weight: bold;
-    padding: 20px;
-    width: 15%;
+    /* font-weight: bold; */
+    padding: 10px;
+    /* width: 15%; */
     color: white;
-    font-size: 25px;
-    width: 200px;
-    margin-left: 10px;
-    height: 100%;
-    text-align: center;
+    font-size: 20px;
+    /* width: 200px; */
+    /* margin-left: 10px; */
+    /* height: 100%; */
+    /* justify-content: center; */
+    position: relative;
+    /* margin: auto; */
   }
 }
 </style>

@@ -41,10 +41,10 @@ body {
 
 #nav {
   padding: 10px;
-  width: 100%;
-  height: 30px;
+  /* width: 100%; */
+  /* height: 30px; */
   background-color: white;
-  line-height: 30px;
+  /* line-height: 30px; */
 
   a {
     font-weight: bold;
