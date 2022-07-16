@@ -1,6 +1,7 @@
 <template>
-  <h1>Kai Family Farm</h1>
   <div id="nav">
+    <h1>Kai Family Farm</h1>
+
     <router-link :class="{ active: $route.name === 'Home' }" to="/"
       >Home</router-link
     >
@@ -40,11 +41,15 @@ body {
 }
 
 #nav {
-  padding: 10px;
+  padding: 20px;
   /* width: 100%; */
   /* height: 30px; */
   background-color: white;
-  /* line-height: 30px; */
+  line-height: 15px;
+  position: relative;
+  margin-bottom: 100;
+  top: 0;
+  width: 100%;
 
   a {
     font-weight: bold;

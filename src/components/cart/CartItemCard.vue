@@ -26,11 +26,13 @@ export default {
 .cart-item-card {
   /* width: 90%; */
   /* height: 100%; */
-  margin: 5%;
+  /* margin: 5%; */
+  /* margin-top: 160px; */
   background-color: white;
   box-shadow: 0 0 5px gray;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 45px;
+  /* position: relative; */
   /* text-align: right; */
 }
 .header {
