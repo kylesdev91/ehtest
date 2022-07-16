@@ -1,9 +1,20 @@
 <template>
   <div id="nav">
     <div style="display: flex; margin-left: 5px; margin-top: 5px">
-      <img src="leaf.jpg" style="height: 40px; width: 40px" />
-      <h2>Kai Family Farm</h2>
+      <!-- <img src="leaf.jpg" style="height: 40px; width: 40px" /> -->
+      <router-link to="/"
+        ><img src="leaf.jpg" style="height: 40px; width: 40px"
+      /></router-link>
+      <router-link to="/"
+        ><h3 style="color: black; margin-bottom: 2px; margin-left: -15px">
+          Kai Family Farm
+        </h3></router-link
+      >
     </div>
+
+    <router-link to="/cart"
+      ><img style="margin-top: 4px" src="shoppingcart.jpeg"
+    /></router-link>
 
     <!-- <router-link :class="{ active: $route.name === 'Home' }" to="/"
       >Home</router-link
@@ -13,11 +24,11 @@
       >Cart</router-link
     > -->
     <!-- <router-link to="/cart">Cart</router-link> -->
-    <div>
+    <!-- <div>
       <img src="shoppingcart.jpeg" />
-    </div>
+    </div> -->
   </div>
-  <router-view style="margin-top: 50px" />
+  <router-view style="margin-top: 60px" />
 </template>
 
 <script>
