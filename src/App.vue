@@ -1,13 +1,16 @@
 <template>
   <div id="nav">
-    <h1>Kai Family Farm</h1>
-
-    <router-link :class="{ active: $route.name === 'Home' }" to="/"
+    <h2 style="margin-left: 5px">Kai Family Farm</h2>
+    <img src="leaf.jpg" />
+    <!-- <router-link :class="{ active: $route.name === 'Home' }" to="/"
       >Home</router-link
-    >
-    <router-link :class="{ active: $route.name === 'Cart' }" to="/cart"
+    > -->
+    <!-- <i class="glyphicon glyphicon-cloud"></i> -->
+    <!-- <router-link :class="{ active: $route.name === 'Cart' }" to="/cart"
       >Cart</router-link
-    >
+    > -->
+    <!-- <router-link to="/cart">Cart</router-link> -->
+    <img src="shoppingcart.jpeg" />
   </div>
   <router-view />
 </template>
@@ -25,7 +28,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
@@ -33,7 +36,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body {
@@ -41,21 +44,25 @@ body {
 }
 
 #nav {
-  padding: 20px;
+  /* padding: 5px; */
+  display: flex;
+  overflow: hidden;
+  position: fixed;
   /* width: 100%; */
   /* height: 30px; */
   background-color: white;
-  line-height: 15px;
-  position: relative;
-  margin-bottom: 100;
+  line-height: 10px;
+  /* position: relative; */
+  /* margin-bottom: 100; */
   top: 0;
+  justify-content: space-between;
   width: 100%;
 
   a {
     font-weight: bold;
     color: darkgray;
     text-decoration: none;
-    margin: 0 5px 0 5px;
+    margin: 10px 10px;
     font-size: 1.25rem;
 
     &.active {
