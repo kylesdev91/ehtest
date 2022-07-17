@@ -3,7 +3,7 @@
     <div class="header">
       <h6>{{ product.name }}</h6>
       <h6>Qty: {{ product.quantity }}</h6>
-      <h6>Total: ${{ item_cost.toFixed(0) }}</h6>
+      <h6>${{ item_cost.toFixed(0) }}</h6>
     </div>
   </div>
 </template>
