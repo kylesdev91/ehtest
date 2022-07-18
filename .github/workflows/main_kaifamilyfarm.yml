@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'kaifamilyfarm'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E234B5EDEF19416E9194D32F90413BF7 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CB6444EAE5234D13939B37D66A5AFE84 }}
           package: .
