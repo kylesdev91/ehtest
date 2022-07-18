@@ -12,10 +12,10 @@
       <h3 class="text-center">${{ product.price.toFixed(0) }} / lb</h3>
 
       <div class="cart-total" v-if="product_total">
-        <h3>Quantity (lb): {{ product_total }}</h3>
+        <h3 class="text-center">Quantity (lb): {{ product_total }}</h3>
       </div>
 
-      <div class="button-container">
+      <div class="button-container text-center">
         <button class="remove" @click="removeFromCart()">Remove</button>
         <button class="add" @click="addToCart()">Add</button>
       </div>
