@@ -7,15 +7,15 @@
   <div class="drawer" :class="{ show: active }">
     <div class="drawer-close" @click="$emit('close-product-drawer')">X</div>
     <div v-if="product" class="product details">
-      <h3 class="text-center">{{ product.name }}</h3>
+      <h2 class="text-center">{{ product.name }}</h2>
       <p class="description">{{ product.description }}</p>
-      <h3 class="text-center">${{ product.price.toFixed(0) }} / lb</h3>
+      <h3 class="text-center">Price: ${{ product.price.toFixed(0) }} / lb</h3>
 
       <div class="cart-total" v-if="product_total">
-        <h3>Quantity (lb): {{ product_total }}</h3>
+        <h2 class="text-center">Quantity (lb): {{ product_total }}</h2>
       </div>
 
-      <div class="button-container">
+      <div class="button-container text-center">
         <button class="remove" @click="removeFromCart()">Remove</button>
         <button class="add" @click="addToCart()">Add</button>
       </div>
@@ -70,6 +70,8 @@ export default {
   transition: left 0.5s;
   z-index: 101;
   overflow-y: scroll;
+  font-weight: bold;
+  text-align: center;
 
   &.show {
     left: 0;
@@ -79,11 +81,10 @@ export default {
 .drawer-close {
   font-size: 1.5rem;
   padding: 5px;
-  border-radius: 5px;
 
-  border: 2px solid gray;
+  border: 3px solid gray;
   color: gray;
-  width: 20px;
+  width: 40px;
   cursor: pointer;
 
   &:hover {
