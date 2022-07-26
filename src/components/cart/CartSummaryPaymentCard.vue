@@ -2,7 +2,6 @@
   <div class="cart-item-card">
     <div style="text-align: center">
       <h5>Cart Total: ${{ cart_total.toFixed(0) }}</h5>
-      <button class="submit">Submit</button>
     </div>
   </div>
 </template>
