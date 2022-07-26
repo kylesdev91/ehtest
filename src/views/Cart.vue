@@ -98,6 +98,7 @@ export default {
   color: white;
   font-size: 20px;
   margin-left: 150px;
+  width: 87px;
   /* width: 200px; */
   /* margin-left: 10px; */
   /* height: 100%; */
@@ -114,6 +115,7 @@ export default {
   color: white;
   font-size: 20px;
   margin-left: 150px;
+  width: 87px;
   /* width: 200px; */
   /* margin-left: 10px; */
   /* height: 100%; */
