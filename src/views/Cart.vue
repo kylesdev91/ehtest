@@ -5,7 +5,7 @@
       :key="product.id"
       :product="product"
     />
-    <CartSummaryPaymentCard />
+    <CartSummaryPaymentCard :getTotal="getTotalPrice" />
     <div>
       <div class="user" v-if="userInfo">
         <p>Welcome, {{ userInfo.userDetails }}</p>
@@ -84,6 +84,10 @@ export default {
         console.error('No profile could be found');
         return undefined;
       }
+    },
+    getTotalPrice(price) {
+      this.price = price;
+      console.log(this.price);
     },
   },
 };

@@ -8,10 +8,19 @@
 
 <script>
 export default {
+  name: 'CartSummaryPaymentCard',
+  data() {
+    return {
+      userTotal: console.log(this.$store.getters.cartTotal),
+    };
+  },
   computed: {
     cart_total() {
       return this.$store.getters.cartTotal;
     },
+  },
+  props: {
+    getTotal: Function,
   },
 };
 </script>
