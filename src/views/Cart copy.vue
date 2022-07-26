@@ -68,13 +68,12 @@ export default {
       var formData = {
         emailSubject: 'Online Order',
         emailBody: content,
-        orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
+        orderTotal: this.name,
         emailAddress: this.userInfo.userDetails,
       };
       axios.post('/api/sendemail', formData).then((response) => {
         console.log(response);
       });
-      console.log('this.name is ' + this.name);
     },
     async getUserInfo() {
       try {

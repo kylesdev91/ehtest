@@ -1,14 +1,13 @@
 <template>
-  <div class="cart-item-card">
-    <div style="text-align: center">
+  <!-- <button v-on:click="getUser(userName)">Email</button> -->
+      <div style="text-align: center">
       <h5>Cart Total: ${{ cart_total.toFixed(0) }}</h5>
       <button class="submit">Submit</button>
     </div>
-  </div>
 </template>
-
 <script>
 export default {
+  name: 'User',
   data() {
     return {
       userName: '$400',
@@ -16,11 +15,6 @@ export default {
   },
   props: {
     getUser: Function,
-  },
-  computed: {
-    cart_total() {
-      return this.$store.getters.cartTotal;
-    },
   },
 };
 </script>
