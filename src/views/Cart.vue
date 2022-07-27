@@ -1,42 +1,26 @@
 <template>
-  <div style="margin-top: 35px; height: 2000px">
-    <CartItemCard
-      v-for="product in products"
-      :key="product.id"
-      :product="product"
-    />
-    <CartSummaryPaymentCard :getUser="getUserName" />
+  <div>
+    <button @click="sendEmail">Email</button>
     <div>
+      <a v-if="userInfo" :href="`/.auth/logout`"><button>Logout</button></a>
+      <a v-if="!userInfo" :href="`/.auth/login/aad`"><button>Login</button></a>
       <div class="user" v-if="userInfo">
-        <p>Welcome, {{ userInfo.userDetails }}</p>
+        <p>Welcome</p>
+        <p>{{ userInfo.userDetails }}</p>
       </div>
-      <a v-if="userInfo" :href="`/.auth/logout`"
-        ><button class="logout">Logout</button></a
-      >
-      <a v-if="!userInfo" :href="`/.auth/login/aad`"
-        ><button class="login">Login</button></a
-      >
-      <button class="email" @click="sendEmail">Submit</button>
-      <button class="email" @click="sendEmailTest">Test</button>
-      
     </div>
   </div>
+  <h2>{{ product.id }}</h2>
+  <h2>{{ product.name }}</h2>
 </template>
 
 <script>
-import CartItemCard from '../components/cart/CartItemCard.vue';
-import CartSummaryPaymentCard from '../components/cart/CartSummaryPaymentCard.vue';
-// import items from '../data/items';
+import items from '../data/items';
 import axios from 'axios';
 export default {
-  components: {
-    CartItemCard,
-    CartSummaryPaymentCard,
-  },
   data() {
     return {
-      name: '',
-      // items: items,
+      items: items,
       userInfo: {
         type: Object,
         default() {},
@@ -54,34 +38,23 @@ export default {
     this.userInfo = await this.getUserInfo();
   },
   methods: {
-    sendEmailTest(){
-      axios.get('/api/sendemailwget').then((response) => {
-        console.log(response);
-      });
-    },
     sendEmail() {
       console.log(this.userInfo.userDetails);
-      // var content = this.items.reduce(function (a, b) {
-      var content = this.products.reduce(function (a, b) {
-        return (
-          a +
-          '<tr><td>' +
-          b.name +
-          '</a></td><td style="text-align:center">' +
-          b.quantity +
-          '</td></td>'
-        );
+      var content = this.items.reduce(function (a, b) {
+        return a + '<tr><td>' + b.id + '</a></td><td>' + b.name + '</td></tr>';
       }, '');
       var formData = {
         emailSubject: 'Online Order',
         emailBody: content,
-        orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
+        orderTotal: 10,
         emailAddress: this.userInfo.userDetails,
       };
       axios.post('/api/sendemail', formData).then((response) => {
         console.log(response);
       });
-      console.log('this.name is ' + this.name);
+    },
+    login() {
+      this.$router.push('/.auth/login/aad');
     },
     async getUserInfo() {
       try {
@@ -94,71 +67,6 @@ export default {
         return undefined;
       }
     },
-    getUserName(name) {
-      console.log(name);
-      this.name = name;
-    },
   },
 };
 </script>
-
-<style lang="scss">
-.login {
-  background-color: green;
-  /* font-weight: bold; */
-  padding: 10px;
-  /* width: 15%; */
-  color: white;
-  font-size: 20px;
-  margin-left: 150px;
-  width: 87px;
-  /* width: 200px; */
-  /* margin-left: 10px; */
-  /* height: 100%; */
-
-  /* position: relative; */
-  /* margin: auto; */
-}
-
-.logout {
-  background-color: green;
-  /* font-weight: bold; */
-  padding: 10px;
-  /* width: 15%; */
-  color: white;
-  font-size: 20px;
-  margin-left: 150px;
-  width: 87px;
-  /* width: 200px; */
-  /* margin-left: 10px; */
-  /* height: 100%; */
-
-  /* position: relative; */
-  /* margin: auto; */
-}
-
-.user {
-  background-color: none;
-  font-weight: bold;
-  margin-left: 10px;
-  font-size: 16px;
-  width: 30%;
-  margin-left: 140px;
-}
-
-.email {
-  background-color: green;
-  /* font-weight: bold; */
-  padding: 10px;
-  /* width: 15%; */
-  color: white;
-  font-size: 20px;
-  /* width: 200px; */
-  /* margin-left: 10px; */
-  /* height: 100%; */
-
-  /* position: relative; */
-  /* margin: auto; */
-  margin-left: 150px;
-}
-</style>
