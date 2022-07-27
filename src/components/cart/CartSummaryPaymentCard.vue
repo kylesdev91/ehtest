@@ -2,7 +2,6 @@
   <div class="cart-item-card">
     <div style="text-align: center">
       <h5>Cart Total: ${{ cart_total.toFixed(0) }}</h5>
-      <button class="submit">Submit</button>
     </div>
   </div>
 </template>
@@ -33,20 +32,5 @@ export default {
   /* margin-top: 40px; */
   /* position: relative; */
   /* text-align: left; */
-
-  .submit {
-    background-color: green;
-    /* font-weight: bold; */
-    padding: 10px;
-    /* width: 15%; */
-    color: white;
-    font-size: 20px;
-    /* width: 200px; */
-    /* margin-left: 10px; */
-    /* height: 100%; */
-
-    /* position: relative; */
-    /* margin: auto; */
-  }
 }
 </style>

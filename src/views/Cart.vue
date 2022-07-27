@@ -134,9 +134,9 @@ export default {
   background-color: none;
   font-weight: bold;
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 16px;
   width: 30%;
-  margin-left: 150px;
+  margin-left: 140px;
 }
 
 .email {
