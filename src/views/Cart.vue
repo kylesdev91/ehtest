@@ -62,12 +62,19 @@ export default {
       console.log(this.userInfo.userDetails);
       // var content = this.items.reduce(function (a, b) {
       var content = this.products.reduce(function (a, b) {
-        return a + '<tr><td>' + b.id + '</a></td><td>' + b.name + '</td></tr>';
+        return (
+          a +
+          '<tr><td>' +
+          b.name +
+          '</a></td><td style="text-align:center">' +
+          b.quantity +
+          '</td></td>'
+        );
       }, '');
       var formData = {
         emailSubject: 'Online Order',
         emailBody: content,
-        orderTotal: 10,
+        orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
         emailAddress: this.userInfo.userDetails,
       };
       axios.post('/api/sendemail', formData).then((response) => {
