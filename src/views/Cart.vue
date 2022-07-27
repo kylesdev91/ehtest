@@ -17,6 +17,8 @@
         ><button class="login">Login</button></a
       >
       <button class="email" @click="sendEmail">Submit</button>
+      <button class="email" @click="sendEmailTest">Test</button>
+      
     </div>
   </div>
 </template>
@@ -52,6 +54,11 @@ export default {
     this.userInfo = await this.getUserInfo();
   },
   methods: {
+    sendEmailTest(){
+      axios.get('/api/sendemailwget').then((response) => {
+        console.log(response);
+      });
+    },
     sendEmail() {
       console.log(this.userInfo.userDetails);
       // var content = this.items.reduce(function (a, b) {
