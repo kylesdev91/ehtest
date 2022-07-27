@@ -1,11 +1,23 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async function (context, req) {
+  const { DefaultAzureCredential } = require('@azure/identity');
+  const { SecretClient } = require('@azure/keyvault-secrets');
+  const credential = new DefaultAzureCredential();
+  const vaultName = 'kaifamilyfarm2KV';
+  const url = `https://${vaultName}.vault.azure.net`;
+  const client = new SecretClient(url, credential);
+
+  const userRetrievedSecret = await client.getSecret('username1');
+  const username1 = userRetrievedSecret.value;
+  const pwdRetrievedSecret = await client.getSecret('password1');
+  const password1 = pwdRetrievedSecret.value;
+
   let transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-      user: 'kffsande123@outlook.com',
-      pass: 'Pwd4Kff5and3',
+      user: username1,
+      pass: password1,
     },
   });
 
