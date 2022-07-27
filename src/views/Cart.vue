@@ -66,7 +66,7 @@ export default {
         );
       }, '');
       var formData = {
-        emailSubject: 'Online Order',
+        emailSubject: 'Online Order From' + this.name,
         emailBody: content,
         orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
         emailAddress: this.userInfo.userDetails,
@@ -86,10 +86,6 @@ export default {
         console.error('No profile could be found');
         return undefined;
       }
-    },
-    getUserName(name) {
-      console.log(name);
-      this.name = name;
     },
   },
 };
