@@ -66,7 +66,7 @@ export default {
         );
       }, '');
       var formData = {
-        emailSubject: 'Online Order From' + this.name,
+        emailSubject: 'Online Order',
         emailBody: content,
         orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
         emailAddress: this.userInfo.userDetails,
