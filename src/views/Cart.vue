@@ -137,11 +137,18 @@ export default {
 
 .user {
   background-color: none;
+  padding: 10px;
+  /* width: 15%; */
   font-weight: bold;
-  margin-left: 10px;
   font-size: 20px;
-  width: 30%;
-  margin-left: 650px;
+  text-align: center;
+  /* width: 200px; */
+  /* margin-left: 10px; */
+  /* height: 100%; */
+
+  /* position: relative; */
+  margin-bottom: 10px;
+  /* margin-left: 250px; */
 }
 
 .email {
