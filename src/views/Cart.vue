@@ -10,13 +10,17 @@
       <div class="user" v-if="userInfo">
         <p>Welcome, {{ userInfo.userDetails }}</p>
       </div>
-      <a v-if="userInfo" :href="`/.auth/logout`"
-        ><button class="logout">Logout</button></a
-      >
-      <a v-if="!userInfo" :href="`/.auth/login/aad`"
-        ><button class="login">Login</button></a
-      >
-      <button class="email" @click="sendEmail">Submit</button>
+      <div class="text-center">
+        <a v-if="userInfo" :href="`/.auth/logout`"
+          ><button class="email">Logout</button></a
+        >
+        <a v-if="!userInfo" :href="`/.auth/login/aad`"
+          ><button class="email">Login</button></a
+        >
+      </div>
+      <div class="text-center">
+        <button class="email" @click="sendEmail">Submit</button>
+      </div>
     </div>
   </div>
 </template>
@@ -103,7 +107,7 @@ export default {
   /* width: 15%; */
   color: white;
   font-size: 20px;
-  margin-left: 150px;
+  margin-left: 550px;
   width: 87px;
   /* width: 200px; */
   /* margin-left: 10px; */
@@ -120,8 +124,9 @@ export default {
   /* width: 15%; */
   color: white;
   font-size: 20px;
-  margin-left: 150px;
+  margin-left: 250px;
   width: 87px;
+
   /* width: 200px; */
   /* margin-left: 10px; */
   /* height: 100%; */
@@ -134,9 +139,9 @@ export default {
   background-color: none;
   font-weight: bold;
   margin-left: 10px;
-  font-size: 16px;
+  font-size: 20px;
   width: 30%;
-  margin-left: 140px;
+  margin-left: 650px;
 }
 
 .email {
@@ -146,12 +151,13 @@ export default {
   /* width: 15%; */
   color: white;
   font-size: 20px;
+  text-align: center;
   /* width: 200px; */
   /* margin-left: 10px; */
   /* height: 100%; */
 
   /* position: relative; */
-  /* margin: auto; */
-  margin-left: 150px;
+  margin-bottom: 10px;
+  /* margin-left: 250px; */
 }
 </style>
