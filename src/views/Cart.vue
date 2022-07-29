@@ -19,7 +19,10 @@
         >
       </div>
       <div class="text-center">
-        <button class="email" @click="sendEmail">Submit</button>
+        <button class="email" @click="sendEmail">{{ btnLabel }}</button>
+      </div>
+      <div class="user" v-if="userInfo">
+        <p>{{ this.orderStatus }}</p>
       </div>
     </div>
   </div>
@@ -38,6 +41,8 @@ export default {
   data() {
     return {
       name: '',
+      btnLabel: 'Submit',
+      orderStatus: '',
       // items: items,
       userInfo: {
         type: Object,
@@ -57,28 +62,36 @@ export default {
   },
   methods: {
     sendEmail() {
-      console.log(this.userInfo.userDetails);
-      // var content = this.items.reduce(function (a, b) {
-      var content = this.products.reduce(function (a, b) {
-        return (
-          a +
-          '<tr><td>' +
-          b.name +
-          '</a></td><td style="text-align:center">' +
-          b.quantity +
-          '</td></td>'
-        );
-      }, '');
-      var formData = {
-        emailSubject: 'Online Order',
-        emailBody: content,
-        orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
-        emailAddress: this.userInfo.userDetails,
-      };
-      axios.post('/api/sendemail', formData).then((response) => {
-        console.log(response);
-      });
-      console.log('this.name is ' + this.name);
+      var date = new Date().toLocaleString();
+      if (this.btnLabel === 'Submit') {
+        // console.log(this.userInfo.userDetails);
+        // var content = this.items.reduce(function (a, b) {
+        var content = this.products.reduce(function (a, b) {
+          return (
+            a +
+            '<tr><td>' +
+            b.name +
+            '</a></td><td style="text-align:center">' +
+            b.quantity +
+            '</td></td>'
+          );
+        }, '');
+        var formData = {
+          emailSubject: 'Online Order',
+          emailBody: content,
+          orderTotal: 'Total: ' + '$' + this.$store.getters.cartTotal,
+          emailAddress: this.userInfo.userDetails,
+        };
+        axios.post('/api/sendemail', formData).then((response) => {
+          console.log(response);
+        });
+        // console.log('this.name is ' + this.name);
+        this.btnLabel = 'Re-Order';
+        this.orderStatus = 'Order sent on ' + date;
+      } else if (this.btnLabel === 'Re-Order') {
+        this.orderStatus = '';
+        this.btnLabel = 'Submit';
+      }
     },
     async getUserInfo() {
       try {
@@ -137,10 +150,9 @@ export default {
 
 .user {
   background-color: none;
-  padding: 10px;
   /* width: 15%; */
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   /* width: 200px; */
   /* margin-left: 10px; */
@@ -157,7 +169,7 @@ export default {
   padding: 10px;
   /* width: 15%; */
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   /* width: 200px; */
   /* margin-left: 10px; */
