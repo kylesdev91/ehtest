@@ -30,7 +30,7 @@ module.exports = async function (context, req) {
     html:
       '<div><table><th><tr><th>Name</th><th>Quantity</th></tr></thead><tbody>' +
       req.body.emailBody +
-      '<tr><td style="text-align:right; font-weight: bold;"><p></p>' +
+      '<tr><td></td><td style="text-align:right; font-weight: bold;"><p></p>' +
       req.body.orderTotal +
       '</td></tr></tbody></table></div>',
   };
