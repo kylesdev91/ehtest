@@ -8,22 +8,22 @@ module.exports = async function (context, req) {
   const url = `https://${vaultName}.vault.azure.net`;
   const client = new SecretClient(url, credential);
 
-  const userRetrievedSecret = await client.getSecret('username1');
-  const username1 = userRetrievedSecret.value;
-  const pwdRetrievedSecret = await client.getSecret('password1');
-  const password1 = pwdRetrievedSecret.value;
+  const userRetrievedSecret = await client.getSecret('username3');
+  const username3 = userRetrievedSecret.value;
+  const pwdRetrievedSecret = await client.getSecret('password3');
+  const password3 = pwdRetrievedSecret.value;
 
   let transporter = nodemailer.createTransport({
     service: 'hotmail',
     auth: {
-      user: username1,
-      pass: password1,
+      user: username3,
+      pass: password3,
     },
   });
 
   const mailOptions = {
-    from: 'kffsande123@outlook.com',
-    to: 'kffsande123@outlook.com',
+    from: 'kffsande12345@outlook.com',
+    to: 'kffsande12345@outlook.com',
     subject:
       'Order From ' + req.body.emailAddress + ' - ' + req.body.emailSubject,
     text: req.body.emailBody,
