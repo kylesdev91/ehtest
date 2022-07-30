@@ -11,7 +11,9 @@
         <p>Welcome, {{ userInfo.userDetails }}</p>
       </div>
       <div class="text-center">
-        <a v-if="userInfo" :href="`/.auth/logout?post_logout_redirect_uri=/.auth/login/aad`"
+        <a
+          v-if="userInfo"
+          :href="`/.auth/logout?post_logout_redirect_uri=/.auth/login/aad`"
           ><button class="email">Logout</button></a
         >
         <a v-if="!userInfo" :href="`/.auth/login/aad`"
@@ -19,7 +21,9 @@
         >
       </div>
       <div class="text-center">
-        <button class="email" @click="sendEmail">{{ btnLabel }}</button>
+        <button v-if="userInfo" class="email" @click="sendEmail">
+          {{ btnLabel }}
+        </button>
       </div>
       <div class="user" v-if="userInfo">
         <p>{{ this.orderStatus }}</p>
