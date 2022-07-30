@@ -11,10 +11,10 @@
         <p>Welcome, {{ userInfo.userDetails }}</p>
       </div>
       <div class="text-center">
-        <a v-if="userInfo" :href="`/.auth/logout`"
+        <a v-if="userInfo" :href="`/.auth/logout?post_logout_redirect_uri=/.auth/login/aad`"
           ><button class="email">Logout</button></a
         >
-        <a v-if="!userInfo" :href="`/.auth/login/aad`"
+        <a v-if="!userInfo" :href="`/.auth/login/aad?post_login_redirect_uri=/cart`"
           ><button class="email">Login</button></a
         >
       </div>
