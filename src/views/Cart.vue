@@ -14,7 +14,7 @@
         <a v-if="userInfo" :href="`/.auth/logout?post_logout_redirect_uri=/.auth/login/aad`"
           ><button class="email">Logout</button></a
         >
-        <a v-if="!userInfo" :href="`/.auth/login/aad?post_login_redirect_uri=/cart`"
+        <a v-if="!userInfo" :href="`/.auth/login/aad`"
           ><button class="email">Login</button></a
         >
       </div>
