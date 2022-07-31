@@ -6,14 +6,34 @@
         ><img src="leaf.jpg" style="height: 40px; width: 40px"
       /></router-link>
       <router-link to="/"
-        ><h3 style="color: black; margin-top: 12px; margin-bottom: 1px; margin-left: -15px">
-          Kai Family Farm <h6 style="font-size: 11px; margin-top: 7px; margin-bottom: -15px; margin-left: 2px">Killer Ass Indo</h6>
+        ><h3
+          style="
+            color: black;
+            margin-top: 12px;
+            margin-bottom: 1px;
+            margin-left: -15px;
+          "
+        >
+          Kai Family Farm
+          <h6
+            style="
+              font-size: 11px;
+              margin-top: 7px;
+              margin-bottom: -15px;
+              margin-left: 2px;
+              font-family: cursive;
+            "
+          >
+            Killer Ass Indo
+          </h6>
         </h3></router-link
       >
     </div>
 
     <router-link to="/cart"
-      ><img style="margin-top: -5px; margin-bottom: -15px" src="shoppingcart.jpeg"
+      ><img
+        style="margin-top: -5px; margin-bottom: -15px"
+        src="shoppingcart.jpeg"
     /></router-link>
 
     <!-- <router-link :class="{ active: $route.name === 'Home' }" to="/"
